@@ -35,15 +35,17 @@ struct Query {
 struct RangeHelper {
     int cnt[MAXN];
     int rev_fac[MAXN];
-    int block_cnt[SQRT_MAXN * 2];
-    int block_rev_fac[SQRT_MAXN * 2];
+    int block_cnt[SQRT_MAXN];
+    int block_rev_fac[SQRT_MAXN];
 
     void init() {
-        for (int i = 0; i < SQRT_MAXN * 2; i++) {
+        for (int i = 0; i < SQRT_MAXN; i++) {
             block_rev_fac[i] = 1;
+            block_cnt[i] = 0;
         }
         for (int i = 0; i < MAXN; i++) {
             rev_fac[i] = 1;
+            cnt[i] = 0;
         }
     }
 
